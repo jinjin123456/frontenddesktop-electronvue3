@@ -1,27 +1,34 @@
 # frontenddesktop-electronvue3
 
-## Project setup
-```
-npm install
+An Electron application with Vue and TypeScript
+
+## Recommended IDE Setup
+
+- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+
+## Project Setup
+
+### Install
+
+```bash
+$ npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Development
+
+```bash
+$ npm run dev
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Build
 
-### Lints and fixes files
-```
-npm run lint
-```
+```bash
+# For windows
+$ npm run build:win
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# For macOS
+$ npm run build:mac
 
-## 技术栈
-Electron/Vue3/element-plus/nodejs
+# For Linux
+$ npm run build:linux
+```
