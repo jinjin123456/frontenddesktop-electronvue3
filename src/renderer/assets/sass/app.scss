@@ -1,0 +1,140 @@
+.app_control {
+  position: fixed;
+  width: 100%;
+  height: $height-nav;
+  background: $color-header-bar-bg;
+  box-shadow: $color-header-bar-box-shadow;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 14px;
+  user-select: none;
+  transition: all ease .2s;
+
+  &_text {
+    width: 220px;
+    justify-content: flex-start;
+    height: $height-nav;
+    line-height: $height-nav;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 6px;
+    font-weight: 600;
+    color: $color-header-bar-fg;
+    user-select: none;
+    &_icon {
+      height: $height-nav;
+      margin-left: -6px;
+      margin-right: 6px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &_img {
+    margin-right: 6px;
+    width: 22px;
+    position: relative;
+    top: -2px;
+  }
+
+  &_project {
+    // max-width: 300px;
+    height: $height-nav;
+    flex: 9;
+    line-height: $height-nav;
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-header-bar-fg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    .ant-input {
+      width: 200px;
+      height: 20px;
+    }
+
+    .project_icon {
+      margin-left: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+
+  &_icon-color {
+    color: $color-header-bar-text-normal;
+    font-size: 18px;
+  }
+
+  &_box {
+    span {
+      display: inline-block;
+      cursor: pointer;
+      height: $height-nav;
+      line-height: $height-nav;
+      width: 45px;
+      text-align: center;
+      color: $color-header-bar-text-normal;
+      -webkit-app-region: no-drag;
+      &:hover .app_control_icon-color  {
+        // background-color: rgba(0, 0, 0, 0.2);
+        color: $color-header-bar-text-active;
+      }
+    }
+    .split-line {
+      width: 1px;
+      height: 15px;
+      background-color: $color-header-bar-fg;
+      margin:0 16px;
+      position: relative;
+      top: 3px;
+    }
+    .menu_tab{
+      color: $color-header-bar-text-normal;
+      margin-right: 28px;
+      font-size: $font-large;
+      width: 92px;
+      white-space: nowrap;
+      padding: 0 10px ;
+      font-weight: 400;
+      &:hover {
+        color: $color-header-bar-text-active;
+        font-weight: 500;
+      }
+    }
+    .menu_tab_active{
+      position: relative;
+      color: $color-header-bar-text-active;
+      font-weight: 500;
+    }
+  }
+}
+.app_control_login{
+  background: transparent;
+  box-shadow: none;
+  .app_control_text {
+    color: #333333;
+  }
+  .app_control_icon-color {
+    color: #000;
+  }
+  .app_control_box {
+    span {
+      color: #000;
+      &:hover .app_control_icon-color  {
+        color: #2C69FF;
+      }
+    }
+    .menu_tab{
+      color: #333;
+      &:hover {
+        color: #2C69FF;
+        font-weight: 500;
+      }
+    }
+    .menu_tab_active{
+      color: #2C69FF;
+    }
+  }
+}
