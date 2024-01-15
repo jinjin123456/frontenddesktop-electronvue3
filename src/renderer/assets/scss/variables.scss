@@ -1,0 +1,38 @@
+// ---------- color -------------------------
+$primary-color: #3E6BFF;
+$primary-color-hover: #3E6BFF;
+$navbar-bg-color: #2A5BFB;
+$primary-bg-color: #e8eeff;
+$color-text-color: #333;
+$color-disabled-breadcrumb: #999;
+$color-white: #fff;
+$color-title: #24272d;
+$color-secTitle: #4d5157;
+$color-subTitle: #7A859B;
+$danger-color: #d03050;
+$warning-color: #f0a020;
+$success-color: #10cb89;
+$border-color: #ebeef5;
+$color-lightblue: #e6f7ff;
+$color-bg: #f9f9f9;
+$bg-gray: #F5F5f5;
+$bg-darkgray: #808080;
+$color-placeholder: #B9BED1;
+$primary-bg-hover: #e8eeff;
+$table-header-bg: #f4f7fb;
+$shadow-color: rgba(0,0,0,0.10);
+$divider-color: #e4e7ed;
+// -------------- 尺寸 ----------------------
+$app-text-size: 14px;
+$app-text-size-custom: var(--vars-text-size-custom, 20px);
+$header-height: 60px;
+$side-width: 220px;
+
+//字体定义规范
+$font-huge: 18px;
+$font-large: 16px;
+$font-medium: 14px;
+$font-normal: 12px;
+$font-mini: 10px;
+$font-xs: 8px;
+$font-family:PingFangSC-Medium, PingFang SC;

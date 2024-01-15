@@ -16,6 +16,15 @@ export default defineConfig({
         '@renderer': resolve('src/renderer')
       }
     },
-    plugins: [vue(), vueJsx()]
+    plugins: [vue(), vueJsx()],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 注入样式变量（根据自己需求注入其他）
+          additionalData: `@import "./src/renderer/assets/scss/variables.scss";
+          @import "./src/renderer/assets/scss/var-class.scss";`
+        }
+      }
+    }
   }
 })

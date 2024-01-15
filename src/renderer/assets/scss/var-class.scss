@@ -1,0 +1,32 @@
+// margin
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  margin: $top $right $bottom $left;
+}
+// 设置字号
+@mixin font($size: 14px) {
+  font-size: $size;
+}
+// flex布局和 子元素 对齐方式
+@mixin fj($type: space-between, $align: center) {
+  display: flex;
+  justify-content: $type;
+  align-items: $align;
+}
+// 单行省略号
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// n行省略号
+@mixin ellipsisn($n: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
+// 定位
+@mixin position($type: relative) {
+  position: $type
+}

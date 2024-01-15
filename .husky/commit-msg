@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 📝 Checking commit message...
+
+# npm 版本太低，导致无法使用 npx 命令
+"$(dirname "$0")/../node_modules/.bin/commitlint" --edit ${1}

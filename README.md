@@ -32,3 +32,6 @@ $ npm run build:mac
 # For Linux
 $ npm run build:linux
 ```
+
+## 项目内容
+### 提交规范工具链(husky,lint-stage, )

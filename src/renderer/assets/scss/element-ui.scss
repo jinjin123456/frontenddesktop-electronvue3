@@ -1,0 +1,53 @@
+.el-menu-item.is-active {
+  background-color: var(--el-menu-hover-bg-color);
+}
+.el-breadcrumb__inner {
+  color: $color-disabled-breadcrumb !important;
+}
+.el-breadcrumb__inner a, .el-breadcrumb__inner.is-link {
+  font-weight: 400 !important;
+  color: $color-text-color !important;
+}
+.el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover {
+  color: $primary-color-hover !important;
+}
+.el-input {
+  .el-input__suffix {
+    display: block !important;
+    position: absolute;
+    right: 11px;
+    top: 2px;
+  }
+}
+.el-dialog__header {
+  border-bottom: 1px solid $border-color;
+  width: calc(100% - 40px);
+}
+.el-pagination {
+  justify-content: flex-end;
+  position: relative;
+  .el-pagination__total.is-first {
+    position: absolute;
+    left: 0;
+  }
+}
+.el-pagination.is-background .btn-next.is-active, .el-pagination.is-background .btn-prev.is-active, .el-pagination.is-background .el-pager li.is-active {
+  background-color: transparent !important;
+  border: 1px solid $primary-color !important;
+  color: $primary-color !important;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  background-color: transparent !important;
+  border-radius: 4px;
+}
+.el-dialog__body {
+  max-height: 56vh !important;
+  overflow-y: auto !important;
+  padding: 12px 20px !important;
+}
+.el-descriptions__title {
+  font-size: 18px !important;
+}
+.el-date-editor.el-input, .el-date-editor.el-input__wrapper {
+  width: 330px !important;
+}

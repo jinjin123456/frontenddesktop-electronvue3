@@ -1,0 +1,210 @@
+// -------------------------- flex布局 ----------------------------------------
+
+.flex {
+  display: flex;
+}
+.flex1 {
+  flex: 1;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+// -------------------------- color颜色 ---------------------------------------
+
+.color-primary {
+  color: $primary-color !important;
+}
+.color-danger {
+  color: $danger-color !important;
+}
+.color-success {
+  color: $success-color !important;
+}
+.color-warning {
+  color: $warning-color !important;
+}
+.color-subTitle {
+  color: $color-subTitle !important;
+}
+.color-title {
+  color: $color-title !important;
+}
+.color-secTitle {
+  color: $color-secTitle !important;
+}
+.color-white {
+  color: $color-white !important;
+}
+.color-placeholder {
+  color: $color-placeholder !important;
+}
+.color-light-text {
+  color: $color-disabled-breadcrumb !important;
+}
+
+// -------------------------bg背景色 -----------------------------------------
+
+.bg-white {
+  background-color: $color-white;
+}
+.bg-gray {
+  background-color: $bg-gray;
+}
+.bg-darkgray {
+  background-color: $bg-darkgray;
+}
+.bg-success {
+  background-color: $success-color;
+}
+
+.bg-warning {
+  background-color: $warning-color;
+}
+
+.bg-danger {
+  background-color: $danger-color;
+}
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+
+// --------------------------shadow阴影 -----------------------------------------
+
+.border-shadow {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 6%);
+}
+
+// ---------------------------- size字号 -------------------------------------
+
+.h12 {
+  font-size: 12px;
+}
+.h14 {
+  font-size: 14px;
+}
+.h16 {
+  font-size: 16px;
+}
+.h18 {
+  font-size: 18px;
+}
+.h20 {
+  font-size: 20px;
+}
+.h24 {
+  font-size: 24px;
+}
+
+// ---------------------------- float浮动 --------------------------------
+
+.f-right {
+  float: right;
+}
+.f-left {
+  float: left;
+}
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// ----------------------------align对齐 -------------------------------
+
+.center{
+  text-align: center;
+}
+.align-right{
+  text-align: right;
+}
+.align-left{
+  text-align: left;
+}
+
+// ----------------------------其他通用 -------------------------------
+
+.pointer {
+  cursor: pointer;
+}
+.hover-link:hover {
+  cursor: pointer;
+  color: $primary-color;
+}
+.overflowY {
+  overflow-y: auto;
+}
+.bold {
+  font-weight: bold;
+}
+// .ellipsis {
+//   @include ellipsis;
+// }
+.app-main {
+  padding: 10px;
+}
+.hide {
+  display: none !important;
+}
+.page-container {
+  padding: 16px;
+  background-color: $color-white;
+  border-radius: 6px;
+  min-height: calc(100% - 22px);
+}
+.box-shadow {
+  box-shadow: -4px 0px 17px 4px $shadow-color;
+}
+
+// ---------------------- margin ---------------------------------
+
+.ml1 {
+  margin-left: 8px;
+}
+.mr1 {
+  margin-right: 8px;
+}
+.mt1 {
+  margin-top: 8px;
+}
+.mb1 {
+  margin-bottom: 8px;
+}
+.ml2 {
+  margin-left: 16px;
+}
+.mr2 {
+  margin-right: 16px;
+}
+.mt2 {
+  margin-top: 16px;
+}
+.mb2 {
+  margin-bottom: 16px;
+}
+.ml3 {
+  margin-left: 24px;
+}
+.mr3 {
+  margin-right: 24px;
+}
+.mt3 {
+  margin-top: 24px;
+}
+.mb3 {
+  margin-bottom: 24px;
+}
+.status-box {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
