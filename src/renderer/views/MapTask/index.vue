@@ -2,9 +2,9 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Detail',
+  name: 'MapTask',
   setup() {
-    return () => <div>1111111111</div>
+    return () => <div>MapTask</div>
   }
 })
 </script>

@@ -1,20 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@renderer/views/home/index.vue'
-import Login from '@renderer/views/login/index.vue'
+import Login from '@renderer/views/Login/index.vue'
+import Home from '@renderer/views/Home/index.vue'
+import MapTask from '@renderer/views/MapTask/index.vue'
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
   history: createWebHistory(),
   routes: [
     {
+      path: '/',
+      name: 'login',
+      component: Login
+    },
+    {
       path: '/home',
       name: 'home',
       component: Home
     },
     {
-      path: '/',
-      name: 'login',
-      component: Login
+      path: '/maptask',
+      name: 'maptask',
+      component: MapTask
     }
     // {
     //   path: '/about',

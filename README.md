@@ -35,7 +35,16 @@ $ npm run build:linux
 
 ## 项目内容
 
-### 单色+多色图标iconfont使用
-### 提交规范工具链(husky,lint-stage,prettier eg.)
+Electron+Vite+Vue3+TS+NodeJS
+地理数据库
 
+### 项目雏形搭建
+#### 单色+多色图标iconfont使用
+### 提交规范工具链(husky,lint-stage,prettier eg.)
 ### 产品构思
+
+功能内容：
+GIS数据查看
+数据格式转换
+可视化分析
+
