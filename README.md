@@ -39,7 +39,9 @@ Electron+Vite+Vue3+TS+NodeJS
 地理数据库
 
 ### 项目雏形搭建
+common目录：抹平主进程与渲染进程差异，公用的配置方法之类的
 #### 单色+多色图标iconfont使用
+#### getBaseSideItem左侧菜单组件+首页框架搭建
 ### 提交规范工具链(husky,lint-stage,prettier eg.)
 ### 产品构思
 

@@ -1,18 +1,28 @@
-import { app, shell, BrowserWindow } from 'electron'
+import { app, shell, BrowserWindow, screen } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
+import initUtils from './utils/index'
+
+let mainWindow: any
+
 function createWindow(): void {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+  const primaryDisplay = screen.getPrimaryDisplay()
+  const { width, height } = primaryDisplay.workAreaSize
+  mainWindow = new BrowserWindow({
+    width,
+    height, // 默认全屏
+    minWidth: 800,
+    minHeight: 600,
+    frame: false, // 屏蔽掉系统标题栏
+    resizable: true, // 允许调整窗口大小
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
-      preload: join(__dirname, '../preload/index.ts'),
+      preload: join(__dirname, '../preload/index.js'),
       sandbox: false
     }
   })
@@ -50,6 +60,8 @@ app.whenReady().then(() => {
   })
 
   createWindow()
+
+  initUtils(mainWindow)
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
