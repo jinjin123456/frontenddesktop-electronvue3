@@ -32,6 +32,8 @@
     "echarts": "^5.4.3",
     "electron-updater": "^6.1.1",
     "element-plus": "^2.4.3",
+    "lodash": "^4.17.21",
+    "mockjs": "^1.1.0",
     "moment": "^2.30.1",
     "ol": "^8.2.0",
     "pinia": "^2.1.7",

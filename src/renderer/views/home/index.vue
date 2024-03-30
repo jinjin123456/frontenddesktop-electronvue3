@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
 import SideMenu from '@renderer/components/sideMenu/index.vue'
-import { MENU_CONFIG } from '@/common/config/index.ts'
+import { MENU_CONFIG } from '@/common/config/index'
 
 export default defineComponent({
   name: 'Home',
@@ -29,7 +29,7 @@ export default defineComponent({
   position: relative;
   &-mainContent {
     background: $bg-gray;
-    padding: 8px 16px 0;
+    padding: 20px;
     flex: 1;
     overflow-y: auto;
   }

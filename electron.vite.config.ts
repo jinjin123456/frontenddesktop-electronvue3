@@ -26,6 +26,20 @@ export default defineConfig({
           @import "./src/renderer/assets/scss/var-class.scss";`
         }
       }
+    },
+    build: {
+      rollupOptions: {
+        // https://rollupjs.org/guide/en/#outputmanualchunks
+        output: {
+          manualChunks: {
+            // 把组件按组分块打包 动态导入
+            homeUI: [
+              './src/renderer/views/home/pages/UI/form.vue',
+              './src/renderer/views/home/pages/UI/useTable.vue'
+            ]
+          }
+        }
+      }
     }
   }
 })

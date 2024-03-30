@@ -1,0 +1,51 @@
+  .n-header {
+    @include fj;
+  }
+  .n-pagination {
+    margin-top: 8px;
+  }
+  .n-form_header {
+    margin-bottom: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .form-header_item {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      .el-input {
+        width: auto;
+      }
+    }
+    .form-header_item:last-child {
+      margin-right: 0;
+    }
+  }
+  .n-button_header {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-end;
+    .el-button {
+      margin-bottom: 4px;
+    }
+    .el-dropdown {
+      margin-left: 12px;
+    }
+  }
+  .n-right_header {
+    align-self: flex-start;
+  }
+  .flex-direction {
+    flex-direction: row-reverse;
+  }
+  .n-operate {
+    @include fj(flex-start, center);
+    .el-button.is-text {
+      height: auto;
+      padding: 0 !important;
+    }
+    .el-dropdown {
+      margin-left: 8px;
+    }
+  }

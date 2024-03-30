@@ -10,6 +10,7 @@ const MapTask = () => import('@renderer/views/MapTask/index.vue')
 * vite中，配置rollupOptions
 */
 const UIForm = () => import('@renderer/views/home/pages/UI/form.vue')
+const UseTable = () => import('@renderer/views/home/pages/UI/useTable.vue')
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +31,11 @@ const router = createRouter({
           path: 'UI',
           name: 'UIForm',
           component: UIForm
+        },
+        {
+          path: 'useTable',
+          name: 'UseTable',
+          component: UseTable
         }
       ]
     },
