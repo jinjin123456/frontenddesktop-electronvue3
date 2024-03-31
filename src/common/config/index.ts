@@ -7,7 +7,7 @@ export const MENU_CONFIG = [
     icon: 'icon-ditu',
     children: [
       {
-        key: 'UIForm',
+        key: 'UseForm',
         title: 'form表单',
         icon: 'icon-ditu'
       },
@@ -17,16 +17,9 @@ export const MENU_CONFIG = [
         icon: 'icon-ditu'
       },
       {
-        key: '1-5',
+        key: 'ExtendModule',
         title: '扩展组件',
-        icon: 'icon-ditu',
-        children: [
-          {
-            key: '1-5-1',
-            title: '支持多级菜单',
-            icon: 'icon-ditu'
-          }
-        ]
+        icon: 'icon-ditu'
       },
       {
         key: '1-6',

@@ -9,8 +9,9 @@ const MapTask = () => import('@renderer/views/MapTask/index.vue')
 * webpack中，使用注释语法 webpackChunkName: "group-user"
 * vite中，配置rollupOptions
 */
-const UIForm = () => import('@renderer/views/home/pages/UI/form.vue')
+const UseForm = () => import('@renderer/views/home/pages/UI/useForm.vue')
 const UseTable = () => import('@renderer/views/home/pages/UI/useTable.vue')
+const ExtendModule = () => import('@renderer/views/home/pages/UI/extendModule.vue')
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,18 +25,23 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      redirect: '/UI',
+      redirect: '/useForm',
       component: Home,
       children: [
         {
-          path: 'UI',
-          name: 'UIForm',
-          component: UIForm
+          path: 'useForm',
+          name: 'UseForm',
+          component: UseForm
         },
         {
           path: 'useTable',
           name: 'UseTable',
           component: UseTable
+        },
+        {
+          path: 'extendModule',
+          name: 'ExtendModule',
+          component: ExtendModule
         }
       ]
     },

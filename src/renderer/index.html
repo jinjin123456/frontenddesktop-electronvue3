@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <title>Electron</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
+    <!-- <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
-    />
+    /> -->
+    <!-- 解决Electron中使用mockjs报错Content Security Policy of your site blocks the use of 'eval' in JavaScript` -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
 
   <body>

@@ -431,7 +431,7 @@ export default defineComponent({
         {
           componentType: 'button',
           type: 'primary',
-          label: '打开表单弹窗' // TODO - 封装表单弹窗
+          label: '按钮'
         }
       ],
       formModel: {

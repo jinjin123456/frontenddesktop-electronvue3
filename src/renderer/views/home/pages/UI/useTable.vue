@@ -50,7 +50,7 @@ export default defineComponent({
       getData: getTableData,
       btnClick: btnClick,
       tableProps: {
-        maxHeight: window.innerHeight - 206,
+        maxHeight: window.innerHeight - 200,
         rowKey: 'id'
       },
       tableData: {
@@ -70,7 +70,7 @@ export default defineComponent({
           },
           {
             label: '更新时间',
-            prop: 'updatetime'
+            prop: 'updateTime'
           },
           {
             label: '操作',
@@ -124,7 +124,7 @@ export default defineComponent({
       btnClick: btnClick,
       select: btnClick, // 支持勾选
       tableProps: {
-        maxHeight: window.innerHeight - 206,
+        maxHeight: window.innerHeight - 240,
         rowKey: 'id'
       },
       formList: [

@@ -32,14 +32,11 @@ const renderHeaderForm = (opt: formListType) => {
         return (
           <div class={'form-header_item' + (item.hidden ? ' hide' : '')}>
             {item.label && <span>{item.label}：</span>}
-            {
-              // item.componentType === 'searchBtn' ? renderSearchBtn(item) : createFn[item.componentType](item, opt.params)
-              item.componentType === 'searchBtn'
-                ? renderSearchBtn(item)
-                : createFn[item.componentType]
-                  ? createFn[item.componentType](item, opt.params)
-                  : item.render?.()
-            }
+            {item.componentType === 'searchBtn'
+              ? renderSearchBtn(item)
+              : createFn[item.componentType]
+                ? createFn[item.componentType](item, opt.params)
+                : item.render?.()}
           </div>
         )
       })}

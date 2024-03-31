@@ -248,7 +248,6 @@ const renderDialog = (option: any) => {
             >
               取消
             </el-button>
-            {/* <el-button type="primary" onClick={() => option.sureFn?.()}>确定</el-button> */}
             <el-button type="primary" onClick={() => option.sureFn?.()} loading={option.btnLoading}>
               确定
             </el-button>

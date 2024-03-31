@@ -14,21 +14,14 @@ export const getMockData = (params?: object) => {
         code: '000000',
         message: '',
         data: {
-          records: [
+          'records|0-25': [
             {
-              id: '111',
-              roleName: '112额我晚点',
-              roleDetail: '33333',
-              founder: '222',
-              updateTime: '111'
+              id: '@id',
+              roleName: '@cname',
+              roleDetail: '@cparagraph(1,2)',
+              founder: '@cparagraph(1,2)',
+              updateTime: '@datetime'
             }
-            // {
-            //   id: '@id',
-            //   roleName: '@cname',
-            //   roleDetail: '@cparagraph(1,2)',
-            //   founder: '@cparagraph(1,2)',
-            //   updateTime: '@datetime'
-            // },
           ],
           total: 45
         }
