@@ -27,7 +27,8 @@ const throwError = (message: string) => {
 
 // request
 service.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  // (config: AxiosRequestConfig) => {
+  (config: any) => {
     if (
       config.data instanceof FormData &&
       config.data.get &&

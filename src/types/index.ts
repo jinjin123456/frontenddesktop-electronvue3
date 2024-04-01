@@ -89,8 +89,9 @@ export interface headItem {
 }
 
 export interface dictItem {
-  is: string | number
-  name: string
+  value: string | number
+  label: string
+  children?: Array<dictItem>
 }
 export interface menuItem {
   key: string | number

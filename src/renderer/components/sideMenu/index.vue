@@ -68,7 +68,7 @@ export default defineComponent({
             mode="vertical"
             collapse={unref(isCollapse)}
           >
-            {props.menuConfig.map((item: menuItem) => {
+            {props.menuConfig.map((item: any) => {
               return item.children && item.children.length ? (
                 <el-sub-menu
                   index={item.key}

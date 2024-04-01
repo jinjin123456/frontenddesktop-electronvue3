@@ -5,13 +5,11 @@ import icon from '../../resources/icon.png?asset'
 
 import initUtils from './utils/index'
 
-let mainWindow: any
-
 function createWindow(): void {
   // Create the browser window.
   const primaryDisplay = screen.getPrimaryDisplay()
   const { width, height } = primaryDisplay.workAreaSize
-  mainWindow = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width,
     height, // 默认全屏
     minWidth: 800,
@@ -43,6 +41,8 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+
+  initUtils(mainWindow)
 }
 
 // This method will be called when Electron has finished
@@ -60,8 +60,6 @@ app.whenReady().then(() => {
   })
 
   createWindow()
-
-  initUtils(mainWindow)
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

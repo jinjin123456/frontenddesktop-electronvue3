@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const Home = () => import('@renderer/views/Home/index.vue')
+const Home = () => import('@renderer/views/home/index.vue')
 // 静态导入 当打包构建应用时，JavaScript 包会变得非常大，影响页面加载
 // import MapTask from '@renderer/views/MapTask/index.vue'
 // 推荐动态导入，路由懒加载 把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就会更加高效
