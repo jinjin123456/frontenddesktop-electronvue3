@@ -5,6 +5,7 @@ import NTable from '@renderer/components/common/nTable/index.vue'
 import { getMockData } from '@renderer/api/index'
 import { resultMap } from '@/types'
 import { TabsPaneContext } from 'element-plus'
+import BUS from '@renderer/utils/bus'
 
 export default defineComponent({
   name: 'UseTable',
@@ -27,7 +28,8 @@ export default defineComponent({
         case 'selectAll':
           selectFun(data)
           break
-        case 'exportAll': // 导出
+        case 'globalLoading':
+          BUS.emit('isLoading', { isLoading: true, text: '正在loading中' })
           break
         default:
           break
@@ -157,8 +159,8 @@ export default defineComponent({
       ],
       buttonList: [
         {
-          label: '导出2',
-          func: 'exportAll2',
+          label: '显示全局loading',
+          func: 'globalLoading',
           plain: true,
           type: 'primary'
         },
