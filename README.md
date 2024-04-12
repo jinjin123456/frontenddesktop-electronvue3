@@ -41,7 +41,13 @@ Electron+Vite+Vue3+TS+NodeJS
 ### 项目雏形搭建
 common目录：抹平主进程与渲染进程差异，公用的配置方法之类的
 #### 单色+多色图标iconfont使用
+#### preload使用
 #### getBaseSideItem左侧菜单组件+首页框架搭建
+##### 基本表单控件封装
+##### 表单弹窗业务组件封装
+##### 表格业务组件封装
+
+#### 事件总线Vue3替代方案
 ### 提交规范工具链(husky,lint-stage,prettier eg.)
 ### 产品构思
 

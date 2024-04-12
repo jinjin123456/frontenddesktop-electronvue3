@@ -3,6 +3,7 @@ import { defineComponent, reactive, onMounted, ref } from 'vue'
 import createFn from '@renderer/components/common/nComponent/createForm'
 import NFormDialog from '@renderer/components/common/nFormDialog/index.vue'
 import { ElMessage, FormRules } from 'element-plus'
+import BUS from '@renderer/utils/bus'
 
 export default defineComponent({
   name: 'ExtendModule',
@@ -54,6 +55,7 @@ export default defineComponent({
       console.log(type, data)
       switch (type) {
         case 'showFormDialog':
+          BUS.emit('test', [1, 2, 3, 4, 5])
           showFormDialog()
           break
         default:

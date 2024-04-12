@@ -22,4 +22,4 @@ app.use(ElementPlus, {
   locale: zhCn
 })
 
-app.mount('#app')
+app.mount('#app') //.mount() 方法应该始终在整个应用配置和资源注册完成后被调用

@@ -1,8 +1,9 @@
 <script lang="tsx">
 import { Fold, Expand } from '@element-plus/icons-vue'
-import { defineComponent, ref, unref } from 'vue'
+import { defineComponent, onBeforeUnmount, onMounted, ref, unref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { menuItem } from '@/types/index'
+import BUS from '@renderer/utils/bus'
 
 const leftWidth = 200
 
@@ -56,6 +57,17 @@ export default defineComponent({
         )
       })
     }
+    const handleBus = (data: any) => {
+      console.log('handleBus', data)
+    }
+    onMounted(() => {
+      BUS.off('test')
+      BUS.on('test', handleBus)
+    })
+    onBeforeUnmount(() => {
+      BUS.off('test')
+      // BUS.all.clear();
+    })
     return () => (
       <div
         class="sideContainer box-shadow"
