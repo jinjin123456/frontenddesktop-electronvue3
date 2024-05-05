@@ -1,0 +1,4 @@
+*.js linguist-language=Electron 
+*.js linguist-language=Vue3
+*.html linguist-language=Vue3
+*.js linguist-language=TypeScript
