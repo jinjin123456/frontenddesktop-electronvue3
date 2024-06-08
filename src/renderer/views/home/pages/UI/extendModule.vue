@@ -4,6 +4,9 @@ import createFn from '@renderer/components/common/nComponent/createForm'
 import NFormDialog from '@renderer/components/common/nFormDialog/index.vue'
 import { ElMessage, FormRules } from 'element-plus'
 import BUS from '@renderer/utils/bus'
+const {
+  electron: { ipcRenderer }
+} = window
 
 export default defineComponent({
   name: 'ExtendModule',
@@ -68,11 +71,16 @@ export default defineComponent({
       label: '按钮',
       func: 'showFormDialog'
     })
+    const handleOpenFile = async () => {
+      const filePath = await ipcRenderer.invoke('dialog:openFile')
+      ElMessage.info(filePath)
+    }
     onMounted(() => {})
     return () => (
       <div>
         <div>表单弹窗：{createFn.button(buttonOption, btnClick)}</div>
         <NFormDialog ref={nformDialogRef} option={dialogOpt} />
+        <el-button onClick={handleOpenFile}>点开文件选择框</el-button>
       </div>
     )
   }

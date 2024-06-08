@@ -1,7 +1,11 @@
 <script lang="tsx">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import AppHeader from '@renderer/components/appHeader/index.vue'
+import { ElMessage } from 'element-plus'
+const {
+  electron: { ipcRenderer }
+} = window
 
 export default defineComponent({
   name: 'App',
@@ -9,6 +13,13 @@ export default defineComponent({
     AppHeader
   },
   setup() {
+    const handleShowClick = (e, msg) => {
+      ElMessage.info(msg)
+    }
+    onMounted(() => {
+      ipcRenderer.removeListener('show-click', handleShowClick)
+      ipcRenderer.on('show-click', handleShowClick)
+    })
     return () => (
       <div id="app">
         <AppHeader />

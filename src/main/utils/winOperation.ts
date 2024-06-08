@@ -1,6 +1,13 @@
-import { ipcMain, Tray, app, Menu } from 'electron'
+import { ipcMain, Tray, app, Menu, dialog } from 'electron'
 
 import trayIcon from '../../../resources/trayIcon.png?asset'
+
+async function handleFileOpen() {
+  const { canceled, filePaths } = await dialog.showOpenDialog()
+  if (!canceled) {
+    return filePaths[0]
+  }
+}
 
 export function registerWindowOperation(mainWindow) {
   ipcMain.on('window-min', () => {
@@ -15,6 +22,7 @@ export function registerWindowOperation(mainWindow) {
   ipcMain.on('window-close', () => {
     mainWindow.close()
   })
+  ipcMain.handle('dialog:openFile', handleFileOpen)
 }
 
 export function createTray(mainWindow) {
@@ -24,7 +32,11 @@ export function createTray(mainWindow) {
       label: '显示',
       click: () => {
         if (!mainWindow) return
-        if (mainWindow.isMinimized()) mainWindow.restore()
+        // if (mainWindow.isMinimized()) mainWindow.restore()
+        if (mainWindow.isMinimized()) {
+          mainWindow.restore()
+          mainWindow.webContents.send('show-click', '用户点击了显示')
+        }
       }
     },
     {
