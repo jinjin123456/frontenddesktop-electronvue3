@@ -13,6 +13,13 @@ export default defineComponent({
     NTable
   },
   setup() {
+    const getApiInfo = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve('1')
+        }, 5000) // 模拟等待接口返回信息
+      })
+    }
     const currTab = ref('simple')
     const selecIds = ref([] as Array<string>) // 表格选中id集合
     const selectFun = (selections: Array<any>) => {
@@ -30,6 +37,10 @@ export default defineComponent({
           break
         case 'globalLoading':
           BUS.emit('isLoading', { isLoading: true, text: '正在loading中' })
+          getApiInfo().then((res) => {
+            BUS.emit('isLoading', { isLoading: false })
+            console.log(res)
+          })
           break
         default:
           break
