@@ -27,9 +27,9 @@ export function createTray(mainWindow) {
         if (mainWindow.isMinimized()) mainWindow.restore()
       }
     },
-    {
-      type: 'separator'
-    },
+    // {
+    //   type: 'separator'
+    // },
     {
       label: '退出',
       click: () => {

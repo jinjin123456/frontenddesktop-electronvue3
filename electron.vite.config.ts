@@ -11,6 +11,7 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()]
   },
   renderer: {
+    base: './', // 解决打包后白屏的问题
     resolve: {
       alias: {
         '@': resolve('src'),
