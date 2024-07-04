@@ -3,10 +3,11 @@ import { ipcMain, Tray, app, Menu, dialog } from 'electron'
 import trayIcon from '../../../resources/trayIcon.png?asset'
 
 async function handleFileOpen() {
-  const { canceled, filePaths } = await dialog.showOpenDialog()
+  const { canceled, filePaths } = await dialog.showOpenDialog({})
   if (!canceled) {
     return filePaths[0]
   }
+  return ''
 }
 
 export function registerWindowOperation(mainWindow) {

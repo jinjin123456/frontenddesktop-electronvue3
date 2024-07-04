@@ -16,7 +16,7 @@ export default defineComponent({
     NLoading
   },
   setup() {
-    const handleShowClick = (e, msg) => {
+    const handleShowClick = (_, msg) => {
       ElMessage.info(msg)
     }
     onMounted(() => {
