@@ -6,7 +6,8 @@ import { ElMessage } from 'element-plus'
 import NLoading from '@renderer/components/common/nLoading.vue'
 
 const {
-  electron: { ipcRenderer }
+  electron: { ipcRenderer },
+  api: { ENV_CONFIG }
 } = window
 
 export default defineComponent({
@@ -16,6 +17,7 @@ export default defineComponent({
     NLoading
   },
   setup() {
+    console.log('ENV_CONFIG', ENV_CONFIG)
     const handleShowClick = (_, msg) => {
       ElMessage.info(msg)
     }

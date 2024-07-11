@@ -17,7 +17,21 @@ $ npm install
 ### Development
 
 ```bash
+# 默认开发环境
 $ npm run dev
+
+# 开发环境及相关变量
+$ npm run start:dev
+
+# 测试环境及相关变量
+$ npm run start:test
+
+# 预生产环境及相关变量
+$ npm run start:pre
+
+# 生产环境及相关变量
+$ npm run start:prod
+
 ```
 
 ### Build
@@ -37,4 +51,5 @@ $ npm run build:linux
 [项目框架搭建]()
 [主进程与渲染进程通信]()
 [事件总线Vue3替代方案]()
+[基于cross-env实现跨平台环境变量设置]()
 

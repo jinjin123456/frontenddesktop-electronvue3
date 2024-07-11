@@ -1,8 +1,13 @@
 import { contextBridge } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
+const path = require('path')
 
 // Custom APIs for renderer
-const api = {}
+const api = {
+  ENV_CONFIG: require('dotenv').config({
+    path: path.join(__dirname, `../../env/${process.env.ENV_CONFIG || 'dev'}.env`)
+  })
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
