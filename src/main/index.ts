@@ -5,6 +5,8 @@ import icon from '../../resources/icon.png?asset'
 
 import initUtils from './utils/index'
 
+const { env } = import.meta
+
 function createWindow(): void {
   // Create the browser window.
   const primaryDisplay = screen.getPrimaryDisplay()
@@ -60,6 +62,13 @@ app.whenReady().then(() => {
   })
 
   createWindow()
+
+  // 验证环境变量是否生效
+  console.log('env', env)
+  // @ts-ignore (define in dts)
+  console.log('env.MAIN_VITE_KEY', env.MAIN_VITE_KEY)
+  // @ts-ignore (define in dts)
+  console.log('env.VITE_KEY', env.VITE_KEY)
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

@@ -7,6 +7,7 @@ import BUS from '@renderer/utils/bus'
 const {
   electron: { ipcRenderer }
 } = window
+const { env } = import.meta // 验证环境变量是否生效
 
 export default defineComponent({
   name: 'ExtendModule',
@@ -81,6 +82,7 @@ export default defineComponent({
         <div>表单弹窗：{createFn.button(buttonOption, btnClick)}</div>
         <NFormDialog ref={nformDialogRef} option={dialogOpt} />
         <el-button onClick={handleOpenFile}>点开文件选择框</el-button>
+        <div>{`${JSON.stringify(env)}:${env.RENDERER_VITE_KEY}:${env.VITE_KEY}`}</div>
       </div>
     )
   }

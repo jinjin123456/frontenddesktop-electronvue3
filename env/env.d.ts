@@ -1,5 +1,3 @@
-import { ElectronAPI } from '@electron-toolkit/preload'
-
 interface ImportMetaEnv {
   readonly MAIN_VITE_KEY: string
   readonly PRELOAD_VITE_API_URL: string
@@ -10,11 +8,4 @@ interface ImportMetaEnv {
 
 interface ImportMeta {
   readonly env: ImportMetaEnv
-}
-
-declare global {
-  interface Window {
-    electron: ElectronAPI
-    api: any
-  }
 }
