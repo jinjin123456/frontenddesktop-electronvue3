@@ -1,6 +1,8 @@
 <script lang="tsx">
 // import { User, Setting, Minus } from 'element-plus/icons-vue'
 import { defineComponent, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 const {
   electron: { ipcRenderer }
 } = window
@@ -8,6 +10,7 @@ const {
 export default defineComponent({
   name: 'AppHeader',
   setup() {
+    const { t } = useI18n()
     const isMax = ref(false)
     const handleMin = () => {
       ipcRenderer.send('window-min')
@@ -23,7 +26,7 @@ export default defineComponent({
     return () => (
       <div class="AppHeader">
         <div class="AppHeader-left" style="-webkit-app-region: drag;">
-          <span>数据可视化平台</span>
+          <span>{t('appTitle')}</span>
         </div>
         <div class="AppHeader-right">
           <i class="iconfont icon-setting" />
