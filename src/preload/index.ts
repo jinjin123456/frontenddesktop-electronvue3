@@ -4,8 +4,6 @@ import { electronAPI } from '@electron-toolkit/preload'
 // const path = require('path')
 const { env } = import.meta
 
-// console.log("env", loadEnv(env.MODE, process.cwd() + '/env'))
-
 // Custom APIs for renderer
 const api = {
   // ENV_CONFIG: require('dotenv').config({
