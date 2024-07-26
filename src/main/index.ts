@@ -5,7 +5,7 @@ import icon from '../../resources/icon.png?asset'
 
 import initUtils from './utils/index'
 
-const { env } = import.meta
+const ENV = import.meta.env
 
 function createWindow(): void {
   // Create the browser window.
@@ -64,11 +64,11 @@ app.whenReady().then(() => {
   createWindow()
 
   // 验证环境变量是否生效
-  console.log('env', env)
+  console.log('env', ENV)
   // @ts-ignore (define in dts)
-  console.log('env.MAIN_VITE_KEY', env.MAIN_VITE_KEY)
+  console.log('env.MAIN_VITE_KEY', ENV.MAIN_VITE_KEY)
   // @ts-ignore (define in dts)
-  console.log('env.VITE_KEY', env.VITE_KEY)
+  console.log('env.VITE_KEY', ENV.VITE_KEY)
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

@@ -1,7 +1,7 @@
 <script lang="tsx">
 // import { User, Setting, Minus } from 'element-plus/icons-vue'
 import { defineComponent, ref } from 'vue'
-// import { useI18n } from 'vue-i18n'
+import { useI18n } from 'vue-i18n'
 
 const {
   electron: { ipcRenderer }
@@ -11,6 +11,7 @@ export default defineComponent({
   name: 'AppHeader',
   setup() {
     // const { t } = useI18n()
+    const { locale } = useI18n()
     const isMax = ref(false)
     const handleMin = () => {
       ipcRenderer.send('window-min')
@@ -21,6 +22,22 @@ export default defineComponent({
     }
     const handleClose = () => {
       ipcRenderer.send('window-close')
+    }
+    const currLang = ref('zh')
+    const langOption = [
+      {
+        label: '中文',
+        value: 'zh'
+      },
+      {
+        label: 'English',
+        value: 'en'
+      }
+    ]
+    const handleLangChange = () => {
+      // this.$i18n.locale = currLang.value
+      // TODO - 切换
+      locale.value = currLang.value
     }
     // // const handleSetting = () => {}
     // return () => (
@@ -45,7 +62,10 @@ export default defineComponent({
       isMax,
       handleMin,
       handleRestore,
-      handleClose
+      handleClose,
+      currLang,
+      langOption,
+      handleLangChange
     }
   }
 })
@@ -59,7 +79,20 @@ export default defineComponent({
     <div class="AppHeader-right">
       <i class="iconfont icon-setting" />
       <i class="iconfont icon-user" />
-
+      <el-select
+        v-model="currLang"
+        placeholder="Select"
+        size="small"
+        style="width: 240px"
+        @change="handleLangChange"
+      >
+        <el-option
+          v-for="item in langOption"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        />
+      </el-select>
       <span>|</span>
       <i class="iconfont icon-minus-bold" @click="handleMin" />
       <i
