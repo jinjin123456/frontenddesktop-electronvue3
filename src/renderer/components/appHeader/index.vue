@@ -83,7 +83,7 @@ export default defineComponent({
         v-model="currLang"
         placeholder="Select"
         size="small"
-        style="width: 240px"
+        style="width: 66px"
         @change="handleLangChange"
       >
         <el-option
@@ -117,12 +117,12 @@ export default defineComponent({
     line-height: $header-height;
   }
   &-left {
-    width: calc(100% - 150px);
+    width: calc(100% - 170px);
     font-size: $font-huge;
     font-weight: bold;
   }
   &-right {
-    width: 200px;
+    width: 240px;
     @include fj();
     i {
       cursor: pointer;

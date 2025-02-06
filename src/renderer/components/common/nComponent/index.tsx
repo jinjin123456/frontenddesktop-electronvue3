@@ -15,7 +15,7 @@ const renderInput = (item: formItem, modelObj: any) => {
   delObjProperty(nodeProps, ['componentType', 'bind', 'label'])
   return (
     modelObj && (
-      <>
+      <div>
         {item.isTrim ? (
           <el-input
             class={item.hidden ? 'hide' : ''}
@@ -39,7 +39,7 @@ const renderInput = (item: formItem, modelObj: any) => {
             }}
           />
         )}
-      </>
+      </div>
     )
   )
 }
@@ -173,6 +173,7 @@ const renderDropdown = (item: buttonItem, btnClick?: Function, dataItem?: object
   delObjProperty(nodeProps, ['componentType', 'label', 'func'])
   return (
     <el-dropdown
+      adaptive={false}
       onCommand={(command: string | number) =>
         item.itemFunc?.(command, dataItem) || btnClick?.(command, dataItem)
       }
@@ -379,12 +380,11 @@ const renderTreeSelect = (item: any, modelObj: any) => {
       <el-tree-select
         v-model={modelObj[item.bind]}
         data={item.data}
-        nodeKey="id"
+        nodeKey={item.props.value || 'id'}
         placeholder={`请选择${item.label}`}
-        {...nodeProps}
-        onNodeClick={(val: any, node: any) => {
-          // console.log(val[item.props.value || 'id'])
-          if (!item.showCheckbox && !node.disabled) {
+        onNodeClick={(val: any) => {
+          // if (!item.showCheckbox && !node.disabled) {
+          if (!item.showCheckbox && !val.children) {
             modelObj[item.bind] = val[item.props.value || 'id']
           }
         }}
@@ -398,6 +398,7 @@ const renderTreeSelect = (item: any, modelObj: any) => {
             resolve(item.load?.(node))
           }, 400)
         }}
+        {...nodeProps}
       />
     )
   )

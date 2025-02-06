@@ -19,6 +19,7 @@ export default defineComponent({
     }
     const validForm = () => {
       return new Promise((resolve, reject) => {
+        console.log('option.formModel', option.formModel)
         if (!unref(formRef)) return
         unref(formRef)?.validate((valid, fields) => {
           if (valid) {
