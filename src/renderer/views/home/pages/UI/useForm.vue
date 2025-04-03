@@ -61,14 +61,14 @@ export default defineComponent({
         {
           componentType: 'input',
           bind: 'emailHost',
-          span: '12',
+          span: 12,
           label: '设置span为12',
           placeholder: ''
         },
         {
           componentType: 'input',
-          bind: 'emailHost',
-          prop: 'emailHost', // 绑定rule校验的
+          bind: 'emailHost1',
+          prop: 'emailHost1', // 绑定rule校验的
           label: '默认全屏',
           placeholder: '',
           hidden: false // 控制显隐
@@ -102,7 +102,7 @@ export default defineComponent({
         },
         {
           componentType: 'treeSelect',
-          bind: 'deptId',
+          bind: 'deptId1',
           label: '所属部门',
           data: [
             {
@@ -121,7 +121,12 @@ export default defineComponent({
                 }
               ]
             }
-          ]
+          ],
+          props: {
+            value: 'value',
+            label: 'label',
+            children: 'children'
+          }
           // 支持设置label value字段
           // props: {
           //   label: 'name',
@@ -436,20 +441,20 @@ export default defineComponent({
       ],
       formModel: {
         emailHost: '',
+        emailHost1: '',
         userId: '',
-        deptId: '',
+        deptId1: '',
         createTime: [],
         adminTypes: [],
         isFlag: '',
         isAdmin: '',
         city: [],
-        emailPort: '',
         emailSsl: true
       },
       rules: {
-        emailHost: [{ required: true, message: '请输入内容', trigger: 'change' }],
-        emailPort: [{ required: true, message: '请输入内容', trigger: 'change' }]
-      } as FormRules
+        emailHost1: [{ required: true, message: '请输入内容', trigger: 'change' }]
+      } as FormRules,
+      showBtn: true
     })
     // const showFormDialog = () => {}
     onMounted(() => {})

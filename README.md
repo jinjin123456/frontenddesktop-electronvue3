@@ -17,7 +17,21 @@ $ npm install
 ### Development
 
 ```bash
+# 默认开发环境
 $ npm run dev
+
+# 开发环境及相关变量
+$ npm run start:dev
+
+# 测试环境及相关变量
+$ npm run start:test
+
+# 预生产环境及相关变量
+$ npm run start:pre
+
+# 生产环境及相关变量
+$ npm run start:prod
+
 ```
 
 ### Build
@@ -34,25 +48,9 @@ $ npm run build:linux
 ```
 
 ## 项目内容
-
-Electron+Vite+Vue3+TS+NodeJS
-地理数据库
-
-### 项目雏形搭建
-common目录：抹平主进程与渲染进程差异，公用的配置方法之类的
-#### 单色+多色图标iconfont使用
-#### preload使用
-#### getBaseSideItem左侧菜单组件+首页框架搭建
-##### 基本表单控件封装
-##### 表单弹窗业务组件封装
-##### 表格业务组件封装
-#### 事件总线Vue3替代方案
-##### 全局loading组件封装
-### 提交规范工具链(husky,lint-stage,prettier eg.)
-### 产品构思
-
-功能内容：
-GIS数据查看
-数据格式转换
-可视化分析
+[项目框架搭建]()
+[主进程与渲染进程通信]()
+[事件总线Vue3替代方案]()
+[基于cross-env实现跨平台环境变量设置]()
+[多语言切换]()
 

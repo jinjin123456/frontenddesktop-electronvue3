@@ -3,12 +3,12 @@ import { defineComponent, onMounted, onBeforeUnmount, Ref, ref } from 'vue'
 import { Loading } from '@element-plus/icons-vue'
 import BUS from '@renderer/utils/bus'
 
-interface loadingMap {
-  isLoading: boolean
-  text?: string
-  immediate?: boolean
-  timeout?: number | undefined
-}
+// interface loadingMap {
+//   isLoading: boolean
+//   text?: string
+//   immediate?: boolean
+//   timeout?: number | undefined
+// }
 
 export default defineComponent({
   name: 'NLoading',
@@ -22,7 +22,8 @@ export default defineComponent({
       timeout = 30,
       isLoading,
       text = '加载中'
-    }: loadingMap) => {
+      // }: loadingMap) => {
+    }: any) => {
       if (!isLoading) {
         loadingHideTimer.value && clearTimeout(loadingHideTimer.value)
         loadingHideTimer.value = setTimeout(() => {

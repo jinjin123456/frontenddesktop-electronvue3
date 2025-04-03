@@ -1,16 +1,31 @@
 <script lang="tsx">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import AppHeader from '@renderer/components/appHeader/index.vue'
+import { ElMessage } from 'element-plus'
+import NLoading from '@renderer/components/common/nLoading.vue'
+
+const {
+  electron: { ipcRenderer }
+} = window
 
 export default defineComponent({
   name: 'App',
   components: {
-    AppHeader
+    AppHeader,
+    NLoading
   },
   setup() {
+    const handleShowClick = (_, msg) => {
+      ElMessage.info(msg)
+    }
+    onMounted(() => {
+      ipcRenderer.removeListener('show-click', handleShowClick)
+      ipcRenderer.on('show-click', handleShowClick)
+    })
     return () => (
       <div id="app">
+        <NLoading />
         <AppHeader />
         <RouterView />
       </div>

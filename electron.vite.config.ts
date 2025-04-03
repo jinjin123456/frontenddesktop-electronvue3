@@ -5,12 +5,16 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+    envDir: 'env'
   },
   preload: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+    envDir: 'env'
   },
   renderer: {
+    base: './', // 解决打包后白屏的问题
+    envDir: `${process.cwd()}/env`,
     resolve: {
       alias: {
         '@': resolve('src'),

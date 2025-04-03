@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 const Home = () => import('@renderer/views/home/index.vue')
 // 静态导入 当打包构建应用时，JavaScript 包会变得非常大，影响页面加载
 // import MapTask from '@renderer/views/MapTask/index.vue'
@@ -15,7 +15,7 @@ const ExtendModule = () => import('@renderer/views/home/pages/UI/extendModule.vu
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     // {
     //   path: '/',
