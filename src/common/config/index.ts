@@ -20,34 +20,34 @@ export const MENU_CONFIG = [
         key: 'ExtendModule',
         title: '扩展组件',
         icon: 'icon-ditu'
-      },
-      {
-        key: '1-6',
-        title: 'ECharts',
-        icon: 'icon-ditu'
       }
+      // {
+      //   key: '1-6',
+      //   title: 'ECharts',
+      //   icon: 'icon-ditu'
+      // }
     ]
-  },
-  {
-    key: '2',
-    title: '2D/3D数据可视化',
-    icon: 'icon-ditu',
-    children: [
-      {
-        key: 'OpenLayer',
-        title: 'OpenLayer',
-        icon: 'icon-ditu'
-      },
-      {
-        key: 'Cesium',
-        title: 'Cesium',
-        icon: 'icon-ditu'
-      }
-    ]
-  },
-  {
-    key: '3',
-    title: '地图编辑器',
-    icon: 'icon-ditu'
   }
+  // {
+  //   key: '2',
+  //   title: '2D/3D数据可视化',
+  //   icon: 'icon-ditu',
+  //   children: [
+  //     {
+  //       key: 'OpenLayer',
+  //       title: 'OpenLayer',
+  //       icon: 'icon-ditu'
+  //     },
+  //     {
+  //       key: 'Cesium',
+  //       title: 'Cesium',
+  //       icon: 'icon-ditu'
+  //     }
+  //   ]
+  // },
+  // {
+  //   key: '3',
+  //   title: '地图编辑器',
+  //   icon: 'icon-ditu'
+  // }
 ] // 左侧菜单栏
